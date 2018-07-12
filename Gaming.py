@@ -4,6 +4,7 @@ from discord.ext import commands
 import asyncio
 import time
 import random 
+import os
 
 prefix = "gaming "
 Client = discord.Client()
@@ -51,4 +52,4 @@ async def on_message(message):
     if(command == "servers"):
        await client.send_message(message.channel, "I'm in ``{}`` servers!".format(len(client.servers)))
 
-client.run("NDY2OTMwMDU1MzYxMjAwMTMw.DijOLg.q82NXqampuCfRdXpKBEIpfkyiNE")
+client.run(os.gerenv("TOKEN"))
