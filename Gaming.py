@@ -49,7 +49,7 @@ async def on_message(message):
                 time.sleep(86400)
         else:
             await client.send_message(message.channel, "<@%s> You do not have the premmision" % (userID))
-            time.sleep(86400)
+            return
                                 
     if(command == "servers"):
        await client.send_message(message.channel, "I'm in ``{}`` servers!".format(len(client.servers)))
