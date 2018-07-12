@@ -43,6 +43,7 @@ async def on_message(message):
     if command == "partner":
         if status == "ON":
             await client.send_message(message.channel, "<@%s> This command is already ``ON``" % (userID))
+            return
         else:
             if userID == "279531199611928577":
                 await client.send_message(message.channel, ":white_check_mark: I will send this message every 24h :smile:")
@@ -56,6 +57,7 @@ async def on_message(message):
                     await client.send_message(message.channel, "**__Link:__**\n https://discord.gg/fZ3FcFP")
                     status = "ON"
                     time.sleep(86400)
+                    return
             else:
                 await client.send_message(message.channel, "<@%s> You do not have the premmision" % (userID))
                 return
