@@ -6,6 +6,8 @@ import time
 import random 
 import os
 
+print ("hi bro")
+
 prefix = "gaming "
 Client = discord.Client()
 client = commands.Bot(command_prefix = "gaming ")
