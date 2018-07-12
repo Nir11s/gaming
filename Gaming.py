@@ -52,4 +52,4 @@ async def on_message(message):
     if(command == "servers"):
        await client.send_message(message.channel, "I'm in ``{}`` servers!".format(len(client.servers)))
 
-client.run(os.gerenv("TOKEN"))
+client.run(os.getenv("TOKEN"))
