@@ -5,8 +5,11 @@ import asyncio
 import time
 import random 
 import os
+from thread import *
 
 print ("hi bro")
+
+threads = []
 
 prefix = "gaming "
 status = "OFF"
@@ -41,6 +44,9 @@ async def on_message(message):
     if command == "status":
          await client.send_message(message.channel, "Command status is: ``"+status+"``")
     if command == "partner":
+    	start_new_thread(threadChannel, (message.channel,))
+        if True:
+          return
         if status == "ON":
             await client.send_message(message.channel, "<@%s> This command is already ``ON``" % (userID))
             return
@@ -66,4 +72,8 @@ async def on_message(message):
     if(command == "servers"):
        await client.send_message(message.channel, "I'm in ``{}`` servers!".format(len(client.servers)))
 
+async def threadChannel(channel):
+  while True:
+	await client.send_message(channel, "This is a test")
+        
 client.run(os.getenv("TOKEN"))
