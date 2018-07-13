@@ -65,8 +65,8 @@ async def threadChannel(channel):
         embed.add_field(name="**היי!** " , value="**אני מעוניין להזמין אתכם לשרת גיימינג** \n **מעוצב במיוחד לגיימרים!** \n ``יש קבלה לצוות השרת!``\n \n » סדר רולים מעוצב בצורת פרופיל של גיימר\n » טאגים לכולם\n » הגרלות\n » בוטים מצחיק\n » פקודות מסודרות\n » מוזיקה\n » כלאנים\n » תחרויות בין הכלאנים\n » אומנות\n ועוד!\n \n**את הראנקים אפשר להשיג לבד** \n **נשמח מאוד אם תצטרפו לקהילה**", inline=False)
         embed.set_footer(text="Creator: Nir11s")
         embed.add_field(name="**▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**", value="Gaming server: [Click me](https://discord.gg/fZ3FcFP)")
-        await client.send_message(message.channel, embed=embed)
-        await client.send_message(message.channel, "**__Link:__**\n https://discord.gg/fZ3FcFP")
+        await client.send_message(channel, embed=embed)
+        await client.send_message(channel, "**__Link:__**\n https://discord.gg/fZ3FcFP")
         await asyncio.sleep(86400)
         
 client.run(os.getenv("TOKEN"))
