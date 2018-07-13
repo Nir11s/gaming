@@ -6,7 +6,7 @@ import time
 import random 
 import os
 import threading
-from thread import *
+from _thread import *
 
 print ("hi bro")
 
