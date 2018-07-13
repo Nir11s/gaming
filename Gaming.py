@@ -47,7 +47,7 @@ async def on_message(message):
          await client.send_message(message.channel, "Command status is: ``"+status+"``")
     if command == "partner":
         await client.send_message(message.channel, "This is working yay haipe")
-        loop.createTask(threadChannel(message.channel))
+        loop.create_task(threadChannel(message.channel))
         if True:
           return
         if status == "ON":
