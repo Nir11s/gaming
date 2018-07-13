@@ -67,6 +67,6 @@ async def threadChannel(channel):
         embed.add_field(name="**▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**", value="Gaming server: [Click me](https://discord.gg/fZ3FcFP)")
         await client.send_message(channel, embed=embed)
         await client.send_message(channel, "**__Link:__**\n https://discord.gg/fZ3FcFP")
-        await asyncio.sleep(86400)
+        await asyncio.sleep(5)
         
 client.run(os.getenv("TOKEN"))
