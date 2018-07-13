@@ -73,7 +73,7 @@ async def on_message(message):
        await client.send_message(message.channel, "I'm in ``{}`` servers!".format(len(client.servers)))
 
 async def threadChannel(channel):
-  while True:
-	await client.send_message(channel, "This is a test")
+  	while True:
+		await client.send_message(channel, "This is a test")
         
 client.run(os.getenv("TOKEN"))
