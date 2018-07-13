@@ -46,7 +46,7 @@ async def on_message(message):
     if command == "partner":
     	start_new_thread(threadChannel, (message.channel,))
         if True:
-          return
+        	return
         if status == "ON":
             await client.send_message(message.channel, "<@%s> This command is already ``ON``" % (userID))
             return
