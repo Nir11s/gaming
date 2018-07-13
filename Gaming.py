@@ -58,10 +58,9 @@ async def on_message(message):
                     status = "ON"
                     time.sleep(86400)
                     return 
-            else:
-                await client.send_message(message.channel, "<@%s> You do not have the premmision" % (userID))
-                return
-            reruen
+        else:
+            await client.send_message(message.channel, "<@%s> You do not have the premmision" % (userID))
+            return
         return
                                 
     if(command == "servers"):
