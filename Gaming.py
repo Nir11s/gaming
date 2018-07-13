@@ -56,7 +56,7 @@ async def on_message(message):
                     await client.send_message(message.channel, embed=embed)
                     await client.send_message(message.channel, "**__Link:__**\n https://discord.gg/fZ3FcFP")
                     status = "ON"
-                    time.sleep(4)
+                    time.sleep(10)
                 return
             else:
                 await client.send_message(message.channel, "<@%s> You do not have the premmision" % (userID))
