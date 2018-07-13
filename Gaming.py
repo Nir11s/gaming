@@ -5,7 +5,7 @@ import asyncio
 import time
 import random 
 import os
-from thread import *
+from _thread import *
 
 loop = asyncio.get_event_loop()
 
