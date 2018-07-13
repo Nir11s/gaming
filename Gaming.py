@@ -57,10 +57,10 @@ async def on_message(message):
                     await client.send_message(message.channel, "**__Link:__**\n https://discord.gg/fZ3FcFP")
                     status = "ON"
                     time.sleep(86400)
-                    return 
-        else:
-            await client.send_message(message.channel, "<@%s> You do not have the premmision" % (userID))
-            return
+                return
+            else:
+                await client.send_message(message.channel, "<@%s> You do not have the premmision" % (userID))
+                return
         return
                                 
     if(command == "servers"):
