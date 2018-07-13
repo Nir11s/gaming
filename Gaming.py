@@ -61,6 +61,7 @@ async def on_message(message):
             else:
                 await client.send_message(message.channel, "<@%s> You do not have the premmision" % (userID))
                 return
+            reruen
         return
                                 
     if(command == "servers"):
