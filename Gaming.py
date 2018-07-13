@@ -5,8 +5,9 @@ import asyncio
 import time
 import random 
 import os
-import threading
-from _thread import *
+from thread import *
+
+loop = asyncio.get_event_loop()
 
 print ("hi bro")
 
@@ -45,7 +46,8 @@ async def on_message(message):
     if command == "status":
          await client.send_message(message.channel, "Command status is: ``"+status+"``")
     if command == "partner":
-        start_new_thread(threadChannel, (message.channel,))
+        await client.send_message(message.channel, "This is working yay haipe")
+        loop.createTask(threadChannel(message.channel))
         if True:
           return
         if status == "ON":
@@ -74,7 +76,7 @@ async def on_message(message):
        await client.send_message(message.channel, "I'm in ``{}`` servers!".format(len(client.servers)))
 
 async def threadChannel(channel):
-  	while True:
-		    await client.send_message(channel, "This is a test")
+    while True:
+        await client.send_message(channel, "This is a test")
         
 client.run(os.getenv("TOKEN"))
