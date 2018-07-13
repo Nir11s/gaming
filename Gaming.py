@@ -74,6 +74,6 @@ async def on_message(message):
 
 async def threadChannel(channel):
   	while True:
-		await client.send_message(channel, "This is a test")
+		    await client.send_message(channel, "This is a test")
         
 client.run(os.getenv("TOKEN"))
