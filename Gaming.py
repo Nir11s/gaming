@@ -46,37 +46,27 @@ async def on_message(message):
     if command == "status":
          await client.send_message(message.channel, "Command status is: ``"+status+"``")
     if command == "partner":
-        await client.send_message(message.channel, "This is working yay haipe")
-        loop.create_task(threadChannel(message.channel))
-        if True:
-          return
-        if status == "ON":
-            await client.send_message(message.channel, "<@%s> This command is already ``ON``" % (userID))
+        if userID == "279531199611928577":
+            await client.send_message(message.channel, ":white_check_mark: I will send this message every 24h :smile:")
+            await client.delete_message(message)
+            loop.create_task(threadChannel(message.channel))
+        else:
+            await client.send_message(message.channel, "<@%s> You do not have the premmision" % (userID))
             return
-        elif status == "OFF":
-            if userID == "279531199611928577":
-                await client.send_message(message.channel, ":white_check_mark: I will send this message every 24h :smile:")
-                await client.delete_message(message)
-                while True:
-                    embed=discord.Embed(title="**__Gaming (server):__**", color=0xff545c)
-                    embed.add_field(name="**היי!** " , value="**אני מעוניין להזמין אתכם לשרת גיימינג** \n **מעוצב במיוחד לגיימרים!** \n ``יש קבלה לצוות השרת!``\n \n » סדר רולים מעוצב בצורת פרופיל של גיימר\n » טאגים לכולם\n » הגרלות\n » בוטים מצחיק\n » פקודות מסודרות\n » מוזיקה\n » כלאנים\n » תחרויות בין הכלאנים\n » אומנות\n ועוד!\n \n**את הראנקים אפשר להשיג לבד** \n **נשמח מאוד אם תצטרפו לקהילה**", inline=False)
-                    embed.set_footer(text="Creator: Nir11s")
-                    embed.add_field(name="**▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**", value="Gaming server: [Click me](https://discord.gg/fZ3FcFP)")
-                    await client.send_message(message.channel, embed=embed)
-                    await client.send_message(message.channel, "**__Link:__**\n https://discord.gg/fZ3FcFP")
-                    status = "ON"
-                    time.sleep(86400)
-                return
-            else:
-                await client.send_message(message.channel, "<@%s> You do not have the premmision" % (userID))
-                return
-        return
+    return
                                 
     if(command == "servers"):
        await client.send_message(message.channel, "I'm in ``{}`` servers!".format(len(client.servers)))
 
+#This is what happens every 24h
 async def threadChannel(channel):
     while True:
-        await client.send_message(channel, "This is a test")
+        embed=discord.Embed(title="**__Gaming (server):__**", color=0xff545c)
+        embed.add_field(name="**היי!** " , value="**אני מעוניין להזמין אתכם לשרת גיימינג** \n **מעוצב במיוחד לגיימרים!** \n ``יש קבלה לצוות השרת!``\n \n » סדר רולים מעוצב בצורת פרופיל של גיימר\n » טאגים לכולם\n » הגרלות\n » בוטים מצחיק\n » פקודות מסודרות\n » מוזיקה\n » כלאנים\n » תחרויות בין הכלאנים\n » אומנות\n ועוד!\n \n**את הראנקים אפשר להשיג לבד** \n **נשמח מאוד אם תצטרפו לקהילה**", inline=False)
+        embed.set_footer(text="Creator: Nir11s")
+        embed.add_field(name="**▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**", value="Gaming server: [Click me](https://discord.gg/fZ3FcFP)")
+        await client.send_message(message.channel, embed=embed)
+        await client.send_message(message.channel, "**__Link:__**\n https://discord.gg/fZ3FcFP")
+        await asyncio.sleep(86400)
         
 client.run(os.getenv("TOKEN"))
