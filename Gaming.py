@@ -5,7 +5,7 @@ import asyncio
 import time
 import random 
 import os
-import thread
+import threading
 from thread import *
 
 print ("hi bro")
