@@ -31,7 +31,7 @@ async def on_message(message):
 
     if (command == "help") or (command == ""):
         embed=discord.Embed(title="**__Gaming (server):__**", color=0xff545c)
-        embed.add_field(name="**prefix:** " + prefix , value="This Bot is for a discord server\n \n **Help** - this help message\n **Partner** - only the bot developer can do this command", inline=False)
+        embed.add_field(name="**prefix:** " + prefix , value="This Bot is for a discord server\n \n **Help** - this help message\n**Status** - the status of the command partner ON/OFF \n**Partner** - only the bot developer can do this command", inline=False)
         embed.set_footer(text="Creator: Nir11s")
         embed.add_field(name="**▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**", value="Gaming server: [Click me](https://discord.gg/fZ3FcFP)")
 
